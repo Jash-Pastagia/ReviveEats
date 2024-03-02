@@ -18,7 +18,8 @@ if (isset($_POST['sign'])) {
       if (password_verify($password, $row['password'])) {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['name'];
-        // $_SESSION['gender'] = $row['gender'];
+        $_SESSION['Aid'] = $row['Aid'];
+        $_SESSION['location']= $row['location'];
         
         header("location:home.php");
       } else {
