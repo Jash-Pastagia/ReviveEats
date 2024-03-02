@@ -1,100 +1,31 @@
 <head>
+    <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <!-- CSS Files -->
+
+
+
+  <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
+
+
+
+
+
+  <!-- Nepcha Analytics (nepcha.com) -->
+  <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+  <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
     <style>
-body {
-    /* justify-content: center;
-    align-items: center; */
-    /* background: #111; */
-    /* display: flex; */
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-}
-
-.chart {
-    background: rgba(255, 255, 255, 0.1);
-    justify-content: flex-start;
-    border-radius: 100px;
-    align-items: center;
-    position: relative;
-    padding: 0 5px;
-    display: flex;
-    height: 40px;
-    width: 500px;
-}
-    .chart span {
-        /* You can modify the value below to change the distance between the percentage number and the bar */
-        margin-left: 5px;
-        color: #bd860f;
-        font-weight: bolder;
-    }
-
-.bar {
-    /* You can modify the total time used for the animation here */
-    animation: load 3s normal forwards;
-    /* 
-    Add a little spice by having a shadow below the bar.
-    Feel free to comment out this line below to have an even LITE version :D 
-    */
-    box-shadow: 0 10px 40px -10px #fff;
-
-    border-radius: 100px;
-    background: #1c134d;
-    height: 30px;
-    width: 0;
-} 
-
-@keyframes load {
-    0% {
-        width: 0;
-    }
-    100% {
-        /* You need to change the percentage below to match the value in the corresponding <span> */
-        width: 68%;
-    }
-}
-
-.chart {
-    background: rgba(255, 255, 255, 0.1);
-    justify-content: flex-start;
-    border-radius: 100px;
-    align-items: center;
-    position: relative;
-    padding: 0 5px;
-    display: flex;
-    height: 40px;
-    width: 500px;
-}
-    .chart span {
-        /* You can modify the value below to change the distance between the percentage number and the bar */
-        margin-left: 5px;
-        color: #9a137d;
-        font-weight: bolder;
-    }
-
-.bar {
-    /* You can modify the total time used for the animation here */
-    animation: load 3s normal forwards;
-    /* 
-    Add a little spice by having a shadow below the bar.
-    Feel free to comment out this line below to have an even LITE version :D 
-    */
-    box-shadow: 0 10px 40px -10px #fff;
-
-    border-radius: 100px;
-    background: #7a2323;
-    height: 30px;
-    width: 0;
-} 
-
-@keyframes load {
-    0% {
-        width: 0;
-    }
-    100% {
-        /* You need to change the percentage below to match the value in the corresponding <span> */
-        width: 68%;
-    }
-}
 
 </style>
 
@@ -114,18 +45,22 @@ body {
         <nav class="nav-bar">
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="../index.html" >Logout</a></li>
+                <li><a href="#" >Reward</a></li>
                 <li><a href="contact.html" >Contact</a></li>
                 <li><a href="profile.php" >Profile</a></li>
                 <!-- <li ><a href="fooddonate.html"  >Donate</a></li> -->
             </ul>
         </nav>
     </header>
-    <div class="chart">
-    <div class="bar"></div>
-    <!-- Change the value below -->
-    <span id="value1">68</span>
-</div>
+    <div class="container">
+        <div class="row py-3 mt-4">
+          <div class="col-8 mx-auto">
+            
+            <div class="progress mb-3 h-100">
+              <div class="progress-bar bg-info h-100" role="progressbar" style="width: 50;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+         
+      </div>
 </body>
 
 <script>
