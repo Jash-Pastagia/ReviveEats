@@ -58,6 +58,7 @@ if(isset($_POST['sign']))
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+
 </head>
 
 <body class="sign-in-basic">
@@ -134,7 +135,7 @@ if(isset($_POST['sign']))
             <!-- <div class="copyright text-center text-sm text-white text-lg-start">
               © <script>
                 document.write(new Date().getFullYear())
-              </script> -->
+              </scrip> -->
             </div>
           </div>
         </div>

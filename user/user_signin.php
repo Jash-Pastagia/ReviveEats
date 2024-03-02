@@ -62,6 +62,17 @@ if (isset($_POST['sign'])) {
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <style>
+    .btn-secondary{
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+    .btn-secondary:hover{
+      background-color: white;
+      color:2px solid black;
+    }
+  </style>
 </head>
 
 <body class="sign-in-basic">
@@ -93,7 +104,7 @@ if (isset($_POST['sign'])) {
                   <button type="submit" name="sign" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
                 </div>
                 <center>
-                <a href="user_signup.html" class="mt-10 text-sm text-center">
+                <a style="cursor: pointer" data-bs-toggle="modal" class="mt-10 text-sm text-center" data-bs-target="#exampleModal">
                     Forgot Password?
                   </a><br>
                   <a href="user_signup.php" class="mt-10 text-m text-center ">
@@ -127,6 +138,29 @@ if (isset($_POST['sign'])) {
       </div>
     </footer>
   </div>
+  
+  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
