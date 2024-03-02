@@ -10,11 +10,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.logo {
+/* .logo {
   text-align: center;
   font-size: 22px;
   color: black;
-}
+/* } */
+/* .logo {
+  font-size: 28px;
+  color: var(--navfont);
+} */ 
 
 .bronze-card {
   border: 1px solid #ccc;

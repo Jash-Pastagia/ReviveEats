@@ -11,7 +11,7 @@
     //     echo "connection is fail !! ";
     // }
     echo "<br><br>";
-    $database = mysqli_select_db($connection,'hackathon');//(connection vari,database_name) select database
+    $database = mysqli_select_db($connection,'demo');//(connection vari,database_name) select database
     // if($database)
     // {
     //     echo "database find !! ";

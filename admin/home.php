@@ -26,9 +26,6 @@ if($_SESSION['name']==''){
     <title>Admin Dashboard Panel</title> 
     
 <?php
- $connection=mysqli_connect("localhost","root","");
- $db=mysqli_select_db($connection,'demo');
- 
 
 
 ?>

@@ -1,14 +1,16 @@
 <?php
 include("login.php"); 
+header("conn.php");
 if($_SESSION['name']==''){
 	header("location: user_signin.php");
 }
 // include("login.php"); 
 $emailid= $_SESSION['email'];
-$connection=mysqli_connect("localhost:3304","root","");
-$db=mysqli_select_db($connection,'demo');
+// $db=mysqli_select_db($connection,'demo');
 if(isset($_POST['submit']))
 {
+    $connection = mysqli_connect('localhost','root',''); //connection with server apache (servername,username,pwd)
+
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
     $meal=mysqli_real_escape_string($connection, $_POST['meal']);
     $category=$_POST['image-choice'];
@@ -23,7 +25,6 @@ if(isset($_POST['submit']))
     $query_run= mysqli_query($connection, $query);
     if($query_run)
     {
-
         echo '<script type="text/javascript">alert("data saved")</script>';
         header("location:delivery.html");
     }
@@ -71,7 +72,7 @@ if(isset($_POST['submit']))
         }
     </script>
 
-    <body style="    background-color: #06C167;">
+    <body style="background-color: #06C167;">
         <div class="container">
             <div class="regformf">
                 <form action="" method="post">
@@ -144,12 +145,7 @@ if(isset($_POST['submit']))
                         </select>
                     </div>
                     <div class="btn">
-<<<<<<< HEAD:user/user_donate.html
                         <button type="submit" name="submit"> Submit</button>
-=======
-                        <button type="submit" name="submit">Submit</button>
->>>>>>> 81c7c7ca05623b340c55c7208d9d4543d8740ec8:user/user_donate.php
-
                     </div>
                 </form>
             </div>
