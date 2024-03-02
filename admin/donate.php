@@ -46,7 +46,7 @@ if($_SESSION['name']==''){
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="admin.php">
+                <li><a href="home.php">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
                 </a></li>
@@ -124,9 +124,12 @@ if($_SESSION['name']==''){
              <label for="location" class="logo">Select Location:</label>
              <!-- <br> -->
             <select id="location" name="location">
-               <option value="chennai">chennai</option>
-               <option value="madurai">madurai</option>
-               <option value="coimbatore">coimbatore</option>
+            <option value="chennai" selected>Surat</option>
+                            <option value="kancheepuram">Ahmedabad</option>
+                            <option value="thiruvallur">Baroda</option>
+                            <option value="vellore">Nadiad</option>
+                            <option value="tiruvannamalai">Gandhinagar</option>
+                            <option value="tiruvallur">Valsad</option>
         
             </select>
                 <input type="submit" value="Get Details">
