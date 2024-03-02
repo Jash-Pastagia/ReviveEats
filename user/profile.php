@@ -1,5 +1,6 @@
 <?php
 include("login.php"); 
+include '../connection.php';
 // if($_SESSION['loggedin']==true){
 //     header("location:loginindex.html");
 // }
@@ -109,59 +110,14 @@ header {
                 <!-- Additional profile details can be added here -->
                 <a href="logout.php">Logout</a>
             </div>
+           
             
-            <!-- Orders section -->
-            <hr>
-            <p class="heading">Your Orders</p>
-            <div class="table-container">
-                <div class="table-wrapper">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                // PHP code to fetch and display user orders
-                                // Modify this part according to your database structure and logic
-                $connection = mysqli_connect('localhost','root',''); //connection with server apache (servername,username,pwd)
-
-                                $email = $_SESSION['email'];
-                                $query = "SELECT * FROM orders WHERE email='$email'";
-                                $result = mysqli_query($connection, $query);
-                                if($result) {
-                                    while($row = mysqli_fetch_assoc($result)) {
-                                        echo "<tr>";
-                                        echo "<td>".$row['order_id']."</td>";
-                                        echo "<td>".$row['product']."</td>";
-                                        echo "<td>".$row['quantity']."</td>";
-                                        echo "<td>".$row['total_price']."</td>";
-                                        echo "</tr>";
-                                    }
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-              <br>
-              <br>
-
-            
-            
-         <hr>
+        
          <br>
          <p class="heading">Your donations</p>
          <!-- <p class="" style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">Your donations</p><br> -->
          <!-- <img src="profilecover1.jpg" alt="" width='100%' height='auto'> -->
-   <div class="table-container">
+        <div class="table-container">
          <!-- <p id="heading">donated</p> -->
          <div class="table-wrapper">
         <table class="table">
@@ -177,7 +133,6 @@ header {
         
 
          <?php
-    $connection = mysqli_connect('localhost','root',''); 
         $email=$_SESSION['email'];
         $query="select * from food_donations where email='$email'";
         $result=mysqli_query($connection, $query);
@@ -193,6 +148,8 @@ header {
     </table>
          </div>
    </div>          
+
+            
 
         </div>
     </div>
