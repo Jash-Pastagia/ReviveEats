@@ -1,3 +1,33 @@
+<?php
+session_start();
+include '../connection.php';
+$token=0;
+
+if (isset($_POST['sign'])) {
+  $id =$_POST['id'];
+  $password =$_POST['password'];
+
+  // $sanitized_emailid =  mysqli_real_escape_string($connection, $email);
+  // $sanitized_password =  mysqli_real_escape_string($connection, $password);
+
+  $sql = "select * from ngo where Nid='$id'";
+  $result = mysqli_query($connection, $sql);
+  $num = mysqli_num_rows($result);
+  if ($num == true) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      if (password_verify($password, $row['password'])) {
+        $_SESSION['Nid'] = $id;
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['city'] = $row['city'];
+
+        header("location:home.php");
+      } else {
+        $token = 1;
+      }
+    }
+  } else {}
+    ?>
+
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -41,17 +71,17 @@
               </div>
             </div>
             <div class="card-body">
-              <form role="form" class="text-start">
+              <form role="form" method="POST" action="" class="text-start">
                 <div class="input-group input-group-outline my-3">
                   <label class="form-label">NGO Id</label>
-                  <input type="number" class="form-control">
+                  <input type="number" name="id" class="form-control">
                 </div>                
                 <div class="input-group input-group-outline mb-3">
                   <label class="form-label">Password</label>
-                  <input type="password" class="form-control">
+                  <input type="password"  name="password" class="form-control">
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
+                  <button type="submit" name="sign" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
                 </div>
                 <center>
                 <a href="ngo_signup.html" class="mt-10 text-sm text-center">

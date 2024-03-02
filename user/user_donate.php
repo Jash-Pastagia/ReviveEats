@@ -1,12 +1,12 @@
 <?php
 include("login.php"); 
+header("conn.php");
 if($_SESSION['name']==''){
 	header("location: user_signin.php");
 }
 // include("login.php"); 
 $emailid= $_SESSION['email'];
-$connection=mysqli_connect("localhost:3304","root","");
-$db=mysqli_select_db($connection,'demo');
+// $db=mysqli_select_db($connection,'demo');
 if(isset($_POST['submit']))
 {
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
@@ -145,7 +145,12 @@ if(isset($_POST['submit']))
                         </select>
                     </div>
                     <div class="btn">
+<<<<<<< HEAD
                         <button type="submit" name="submit"> Submit</button>
+=======
+
+                        <button type="submit" name="submit">Submit</button>
+>>>>>>> 8041ea6aabc7f8a55a8e78da3d92a2fe70d4b5fd
                     </div>
                 </form>
             </div>
