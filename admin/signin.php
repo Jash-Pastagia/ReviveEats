@@ -1,3 +1,38 @@
+<?php
+session_start();
+include '../connection.php';
+if (isset($_POST['sign'])) {
+  $email =$_POST['email'];
+  $password =$_POST['password'];
+
+  // $sanitized_emailid =  mysqli_real_escape_string($connection, $email);
+  // $sanitized_password =  mysqli_real_escape_string($connection, $password);
+
+  $sql = "select * from admin where email='$email'";
+  $result = mysqli_query($connection, $sql);
+  $num = mysqli_num_rows($result);
+  if ($num == 1) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      if (password_verify($password, $row['password'])) {
+        $_SESSION['email'] = $email;
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['gender'] = $row['gender'];
+        
+        header("location:../user/home.html");
+      } else {
+        $token = 1;
+      }
+    }
+  } else {
+    ?>
+    <script>
+      alert('Account does not exist!');
+      location.href="user_signup.php";
+    </script>
+    <?php
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -41,25 +76,25 @@
               </div>
             </div>
             <div class="card-body">
-              <form role="form" class="text-start">
+              <form role="form" class="text-start" action=" " method="POST">
                 <div class="input-group input-group-outline my-3">
-                  <label class="form-label">User Name</label>
-                  <input type="text" class="form-control">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control">
                 </div>                
                 <div class="input-group input-group-outline mb-3">
                   <label class="form-label">Password</label>
-                  <input type="password" class="form-control">
+                  <input type="password" name="password" class="form-control">
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2" onclick="admin()">Sign In</button>
+                  <button type="submit" name="sign" class="btn bg-gradient-dark w-100 my-4 mb-2" onclick="admin()">Sign In</button>
                 </div>
                 <center>
-                <a href="user_signup.html" class="mt-10 text-sm text-center">
+                <!-- <a href="user_signup.html" class="mt-10 text-sm text-center">
                     Forgot Password?
                   </a><br>
                   <a href="user_signup.html" class="mt-10 text-m text-center ">
                     Don't have an account?
-                  </a>
+                  </a> -->
                 </center>
               </form>
             </div>

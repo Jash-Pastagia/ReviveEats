@@ -3,7 +3,7 @@ session_start();
 include '../connection.php';
 // $connection = mysqli_connect("localhost:3307", "root", "");
 // $db = mysqli_select_db($connection, 'demo');
-$msg=0;
+$token=0;
 if (isset($_POST['sign'])) {
   $email =$_POST['email'];
   $password =$_POST['password'];
@@ -23,7 +23,7 @@ if (isset($_POST['sign'])) {
         
         header("location:home.html");
       } else {
-        $msg = 1;
+        $token = 1;
       }
     }
   } else {
@@ -100,9 +100,9 @@ if (isset($_POST['sign'])) {
                     Don't have an account?
                   </a>
                   <?php
-                    if($msg==1){
-                        echo ' <i class="bx bx-error-circle error-icon" style=""></i>';
-                        echo '<p class="error" style="color: red">Password not match.</p>';
+                    if($token==1){
+                        echo ' <i class="bx bx-error-circle error-icon" style="color: red"></i>';
+                        echo '<p class="error">Password not match.</p>';
                     }
                     ?>
                 </center>
