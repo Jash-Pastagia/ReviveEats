@@ -9,6 +9,8 @@ $emailid= $_SESSION['email'];
 // $db=mysqli_select_db($connection,'demo');
 if(isset($_POST['submit']))
 {
+    $connection = mysqli_connect('localhost','root',''); //connection with server apache (servername,username,pwd)
+
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
     $meal=mysqli_real_escape_string($connection, $_POST['meal']);
     $category=$_POST['image-choice'];
@@ -23,7 +25,6 @@ if(isset($_POST['submit']))
     $query_run= mysqli_query($connection, $query);
     if($query_run)
     {
-
         echo '<script type="text/javascript">alert("data saved")</script>';
         header("location:delivery.html");
     }
@@ -71,7 +72,7 @@ if(isset($_POST['submit']))
         }
     </script>
 
-    <body style="    background-color: #06C167;">
+    <body style="background-color: #06C167;">
         <div class="container">
             <div class="regformf">
                 <form action="" method="post">

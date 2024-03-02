@@ -37,12 +37,12 @@ body {
 /* Header Styles */
 header {
     border-bottom: 2px solid black;
-    padding: 10px 0;
-    background-color: #fff; /* Change this to your desired background color */
+    /* padding: 10px 0; */
+    /* background-color: #fff; Change this to your desired background color */
     position: fixed;
-    width: 100%;
+    /* width: 100%; */
     top: 0;
-    z-index: 999;
+    /* z-index: 999; */
 }
 
 /* .logo {
@@ -51,7 +51,7 @@ header {
     color: black;
 } */
 .logo {
-    margin-left: 100px;
+    margin-left: 40px;
     font-size: 28px;
     color: var(--navfont);
 }
@@ -104,9 +104,9 @@ header {
             <!-- Profile information section -->
             <p class="headingline">Profile</p>
             <div class="info">
-                <p><b>Name: </b>&nbsp;<?php echo $_SESSION['name']; ?></p>
-                <p><b>Email: </b>&nbsp;<?php echo $_SESSION['email']; ?></p>
-                <p><b>Gender: </b>&nbsp;<?php echo $_SESSION['gender']; ?></p>
+                <p><b>Name: </b><?php echo $_SESSION['name']; ?></p>
+                <p><b>Email: </b><?php echo $_SESSION['email']; ?></p>
+                <p><b>Gender: </b><?php echo $_SESSION['gender']; ?></p>
                 <!-- Additional profile details can be added here -->
                 <a href="logout.php">Logout</a>
             </div>
