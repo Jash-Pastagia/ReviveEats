@@ -27,10 +27,6 @@ if($_SESSION['name']==''){
     <title>Admin Dashboard Panel</title> 
     
 <?php
- $connection=mysqli_connect("localhost","root","");
- $db=mysqli_select_db($connection,'demo');
- 
-
 
 ?>
 </head>
@@ -124,13 +120,13 @@ if($_SESSION['name']==''){
              <label for="location" class="logo">Select Location:</label>
              <!-- <br> -->
             <select id="location" name="location">
-            <option value="chennai" selected>Surat</option>
-                            <option value="kancheepuram">Ahmedabad</option>
-                            <option value="thiruvallur">Baroda</option>
-                            <option value="vellore">Nadiad</option>
-                            <option value="tiruvannamalai">Gandhinagar</option>
-                            <option value="tiruvallur">Valsad</option>
-        
+            <option value="" id="">-choose-</option>
+            <option value="Surat" id="Surat">Surat</option>
+            <option value="Ahmedabad" id="Ahmedabad">Ahmedabad</option>
+            <option value="Baroda" id="Baroda">Baroda</option>
+            <option value="Nadiad" id="Nadiad">Nadiad</option>
+            <option value="Gandhinagar" id="Gandhinagar">Gandhinagar</option>
+            <option value="Valsad" id="Valsad">Valsad</option>
             </select>
                 <input type="submit" value="Get Details">
          </form>
@@ -140,7 +136,7 @@ if($_SESSION['name']==''){
     // Get the selected location from the form
     if(isset($_POST['location'])) {
       $location = $_POST['location'];
-      
+   
       // Query the database for people in the selected location
       $sql = "SELECT * FROM food_donations WHERE location='$location'";
       $result=mysqli_query($connection, $sql);

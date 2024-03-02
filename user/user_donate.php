@@ -1,14 +1,16 @@
 <?php
 include("login.php"); 
+$connection = mysqli_connect('localhost','root','');
+$database = mysqli_select_db($connection,'hackathon');
 if($_SESSION['name']==''){
 	header("location: user_signin.php");
 }
 // include("login.php"); 
 $emailid= $_SESSION['email'];
-$connection=mysqli_connect("localhost:3304","root","");
-$db=mysqli_select_db($connection,'demo');
+// $db=mysqli_select_db($connection,'demo');
 if(isset($_POST['submit']))
 {
+
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
     $meal=mysqli_real_escape_string($connection, $_POST['meal']);
     $category=$_POST['image-choice'];
@@ -23,7 +25,6 @@ if(isset($_POST['submit']))
     $query_run= mysqli_query($connection, $query);
     if($query_run)
     {
-
         echo '<script type="text/javascript">alert("data saved")</script>';
         header("location:delivery.html");
     }
@@ -71,7 +72,7 @@ if(isset($_POST['submit']))
         }
     </script>
 
-    <body style="    background-color: #06C167;">
+    <body style="background-color: #06C167;">
         <div class="container">
             <div class="regformf">
                 <form action="" method="post">
@@ -117,7 +118,6 @@ if(isset($_POST['submit']))
                         <p style="text-align: center;">Contact Details</p>
                     </b>
                     <div class="input">
-
                         <div>
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" value="<?php echo"". $_SESSION['name'] ;?>"
@@ -136,21 +136,16 @@ if(isset($_POST['submit']))
                         <label for="location"></label>
                         <label for="district">District:</label>
                         <select id="district" name="district" style="height: 2rem; width: 5rem; font-size: 1rem">
-                        <option value="chennai" selected>Surat</option>
-                            <option value="kancheepuram">Ahmedabad</option>
-                            <option value="thiruvallur">Baroda</option>
-                            <option value="vellore">Nadiad</option>
-                            <option value="tiruvannamalai">Gandhinagar</option>
-                            <option value="tiruvallur">Valsad</option>
+                        <option value="Surat" selected>Surat</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Baroda">Baroda</option>
+                            <option value="Nadiad">Nadiad</option>
+                            <option value="Gandhinagar">Gandhinagar</option>
+                            <option value="Valsad">Valsad</option>
                         </select>
                     </div>
                     <div class="btn">
-<<<<<<< HEAD:user/user_donate.html
                         <button type="submit" name="submit"> Submit</button>
-=======
-                        <button type="submit" name="submit">Submit</button>
->>>>>>> 81c7c7ca05623b340c55c7208d9d4543d8740ec8:user/user_donate.php
-
                     </div>
                 </form>
             </div>

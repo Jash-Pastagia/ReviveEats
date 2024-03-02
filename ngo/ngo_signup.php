@@ -1,4 +1,41 @@
 
+<?php
+include '../connection.php';
+// $connection=mysqli_connect("localhost:3307","root","");
+// $db=mysqli_select_db($connection,'demo');
+if(isset($_POST['submit']))
+{
+  // echo "hello";
+  
+    $name=$_POST['name'];
+    $id=$_POST['id'];
+    $email=$_POST['email'];
+    $city=$_POST['city'];
+    $password=$_POST['password'];
+    $pass=password_hash($password,PASSWORD_DEFAULT);
+    $sql="select * from ngo where email='$email'" ;
+    $result= mysqli_query($connection, $sql);
+    $num=mysqli_num_rows($result);
+    if($num==1){
+
+        echo "<h1><center>Account already exists</center></h1>";
+    }
+    else{
+    
+    $query="insert into ngo(Nid,name,email,city,password) values('$id','$name','$email','city','$pass')";
+    $query_run= mysqli_query($connection, $query);
+    if($query_run)
+    {
+      header("location:ngo_signin.php");
+       
+    }
+    else{
+        echo '<script type="text/javascript">alert("data not saved")</script>';
+        
+    }
+} 
+}
+?>
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -43,30 +80,28 @@
             </div>
             <div class="card-body">
               <form role="form" method="post" 
-              action="<?php echo $_SERVER['PHP_SELF']; ?>">              
+              action="">              
                 <div class="input-group input-group-outline my-3">
                   <label class="form-label">NGO Name</label>
-                  <input type="text" name="username" class="form-control">
+                  <input type="text" name="name" class="form-control">
                 </div>
                 <div class="input-group input-group-outline my-3">
                   <label class="form-label">NGO Id</label>
                   <input type="number" name="id" class="form-control">
                 </div>
                 <div class="input-group input-group-outline my-3">
-                  <label class="form-label">Mobile Number</label>
-                  <input type="number" name="mono" maxlength="10" class="form-control">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email"  class="form-control">
                 </div>
 
-                <div class="dropdown">
-                    <button class="btn bg-gradient-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                      City
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <li><a class="dropdown-item" href="#" onclick="updateCity('Surat')">Surat</a></li>
-                      <li><a class="dropdown-item" href="#" onclick="updateCity('Ahmdabad')">Ahmdabad</a></li>
-                      <li><a class="dropdown-item" href="#" onclick="updateCity('Rajkot')">Rajkot</a></li>
-                    </ul>
-                  </div>
+                <select class="btn bg-gradient-dark" name="city" id="city" >
+                <option value="Surat" selected>Surat</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Baroda">Baroda</option>
+                            <option value="Nadiad">Nadiad</option>
+                            <option value="Gandhinagar">Gandhinagar</option>
+                            <option value="Valsad">Valsad</option>
+              </select>
                 
                 
                 <div class="input-group input-group-outline mb-3">
@@ -78,10 +113,10 @@
                   <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label> 
                 </div> -->
                 <div class="text-center">
-                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2" >Sign up</button>
+                  <button type="submit" name="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" >Sign up</button>
                 </div>
                 <center>
-                <a href="ngo_signin.html" class="mt-10 text-sm text-center ">
+                <a href="ngo_signin.php" class="mt-10 text-sm text-center ">
                   Already have an account?
                 </a>
               </center>
