@@ -1,9 +1,8 @@
 <?php
 session_start();
-header("conn.php");
 
-// $connection = mysqli_connect("localhost", "root", "");
-// $db = mysqli_select_db($connection, 'demo');
+ $connection = mysqli_connect("localhost", "root", "");
+ $db = mysqli_select_db($connection, 'hackathon');
 if (isset($_POST['sign'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
