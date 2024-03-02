@@ -1,41 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" type="text/css"
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revive Eats</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-  <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-
-  <!-- CSS Files -->
-
-
-
-  <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
-
-
-
-
-
-  <!-- Nepcha Analytics (nepcha.com) -->
-  <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
-  <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-    <style>
-
-</style>
-
-<link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
-    <header>
+    <header style="border-bottom: 2px solid black;">
         <div class="logo">Revive<b style="color: #06C167;">Eats</b></div>
         <div class="hamburger">
             <div class="line"></div>
@@ -45,31 +25,100 @@
         <nav class="nav-bar">
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="#user_reward" class="active">Reward</a></li>
-                <li><a href="contact.html" >Contact</a></li>
-                <li><a href="profile.php" >Profile</a></li>
-                <!-- <li ><a href="fooddonate.html"  >Donate</a></li> -->
+                <li><a href="user_reward.html" class="active">Reward</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.php">Profile</a></li>
             </ul>
         </nav>
     </header>
     <script>
-        hamburger=document.querySelector(".hamburger");
-        hamburger.onclick =function(){
-            navBar=document.querySelector(".nav-bar");
+        hamburger = document.querySelector(".hamburger");
+        hamburger.onclick = function () {
+            navBar = document.querySelector(".nav-bar");
             navBar.classList.toggle("active");
         }
     </script>
-    <div class="container">
-        <div class="row py-3 mt-4">
-          <div class="col-8 mx-auto">
-            
-            <div class="progress mb-3 h-100">
-              <div class="progress-bar bg-info h-100" role="progressbar" style="width: 50;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <body style="background-color: #06C167;">
+        <center>
+            <h1 style="margin-top: 1.5rem;">User Rewards</h1>
+        </center>
+        <div class="content">
+            <div class="card">
+                <div class="bronze-card">
+                    <h2>Bronze Reward <i class="fa-solid fa-medal"></i></h2>
+                    <p style="color: black;"><b>Earn 1$ -> 80₹</b></p>
+                    <p style="color: black;">For 5 people meal</p>
+                </div>
+                <div class="silver-card">
+                    <h2>Silver Reward <i class="fa-solid fa-medal"></i></h2>
+                    <p style="color: black;"><b>Earn 5$ -> 400₹</b></p>
+                    <p style="color: black;">For 20 people meal</p>
+                </div>
+                <div class="gold-card">
+                    <h2>Gold Reward <i class="fa-solid fa-medal"></i></h2>
+                    <p style="color: black;"><b>Earn 25$ -> 2000₹</b></p>
+                    <p style="color: black;">For 100 people meal</p>
+                </div>
             </div>
-         
-      </div>
-</body>
+        </div>
+        <center>
+            <div class="amount">
+                <div style="left: 3rem; position: absolute;">Amount Earned</div>
+                <div style="right: 3rem; position: absolute;">₹ 5000</div>
+            </div>
 
-<script>
+            <button class="withdraw">Withdraw <i class="fa-solid fa-wallet"></i></button>
+        </center>
 
-</script>
+        <footer class="footer">
+            <div class="footer-left col-md-4 col-sm-6">
+                <p class="about">
+                    <span> About us</span>The basic concept of this project Food Waste Management is to collect the
+                    excess/leftover
+                    food from donors such as hotels, restaurants, marriage halls , etc and distribute to the needy
+                    people .
+                </p>
+
+            </div>
+            <div class="footer-center col-md-4 col-sm-6">
+                <div>
+                    <p><span> Contact</span> </p>
+
+                </div>
+                <div>
+
+                    <p> +91 9825111616</p>
+
+                </div>
+                <div>
+                    <!-- <i class="fa fa-envelope" style="font-size: 17px;
+            line-height: 38px; color:white;"></i> -->
+                    <p><a href="#">Reviveeats@gmail.com</a></p>
+                </div>
+
+                <div class="sociallist">
+                    <ul class="social">
+                        <li><a href="https://www.facebook.com/TheAkshayaPatraFoundation/"><img
+                                    src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+                        <li><a href="https://twitter.com/globalgiving"><img
+                                    src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/charitism/"><img
+                                    src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+                        <li><a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp"
+                                    style="font-size:50px;color: black;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-right col-md-4 col-sm-6">
+                <h2>Revive<span>Eats</span></h2>
+
+                <p class="name">All rights reserved. Copyright ©
+                    <script>document.write(new Date().getFullYear())</script> Code Fusion Five
+                </p>
+            </div>
+        </footer>
+    </body>
+
+</html>

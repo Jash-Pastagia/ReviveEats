@@ -13,12 +13,13 @@ if (isset($_POST['sign'])) {
   $sql = "select * from admin where email='$email'";
   $result = mysqli_query($connection, $sql);
   $num = mysqli_num_rows($result);
-  if ($num == 1) {
+  if ($num == true) {
     while ($row = mysqli_fetch_assoc($result)) {
       if (password_verify($password, $row['password'])) {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['name'];
-        // $_SESSION['gender'] = $row['gender'];
+        $_SESSION['Aid'] = $row['Aid'];
+        $_SESSION['location']= $row['location'];
         
         header("location:home.php");
       } else {
