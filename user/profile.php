@@ -1,6 +1,6 @@
 <?php
 include("login.php"); 
-include 'conn.php';
+include '../connection.php';
 // if($_SESSION['loggedin']==true){
 //     header("location:loginindex.html");
 // }
@@ -19,7 +19,7 @@ if($_SESSION['name']==''){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revive Eats</title>
-    <link rel="stylesheet" href="home2.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="profile.css">
     <!-- <link rel="stylesheet" href="loginstyle.css"> -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -38,7 +38,7 @@ body {
 /* Header Styles */
 header {
     border-bottom: 2px solid black;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     background-color: #fff; /* Change this to your desired background color */
     position: fixed;
     width: 100%;
