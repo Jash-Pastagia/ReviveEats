@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <style>
+        .itm{
+            background-color: white;
+            display: grid;
+        }
+        .itm img{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p{
+            text-align: center; font-size: 30PX;color: black; margin-top: 30px;
+        }
+        a{
+            text-decoration: underline;
+        }
+        button{
+            padding: 10px;
+            font-size: 1rem;
+            background: black;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            transform: scale(1.05);
+        }
+        @media (max-width: 767px) {
+            .itm{
+                /* float: left; */
+                
+            }
+        }
+    </style>
+
+        <div class="itm" >
+
+            <!-- <p class="heading">We will reach soon</p> -->
+            <p>"Your order will be immediately collected and sent to needy people!"<br>
+            Thank's keep donating</p>
+            <img src="delivery.gif" alt="" width="380" height="380"> 
+          
+            <!-- <p>Thanks for donating <a href="home.html"></a></p> -->
+          <p style="text-align: center;"><button type="submit" onclick="returnback()">Return to home page</button></p>
+           
+        </div>
+        <br>
+     <script>
+        function returnback(){
+            location.href = "home.html";
+        }
+     </script>
+</body>
+</html>
