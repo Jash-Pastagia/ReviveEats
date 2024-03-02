@@ -2,7 +2,7 @@
 <?php
 session_start(); 
 // $connection = mysqli_connect("localhost:3307", "root", "");
-// $db = mysqli_select_db($connection, 'demo');
+// $db = mysqli_select_db($connection, 'hackathon');
  include("../connection.php"); 
 if($_SESSION['name']==''){
 	header("location:signin.php");
@@ -30,7 +30,7 @@ if($_SESSION['name']==''){
     
 <?php
  $connection=mysqli_connect("localhost:3306","root","");
- $db=mysqli_select_db($connection,'demo');
+ $db=mysqli_select_db($connection,'hackathon');
  
 
 
