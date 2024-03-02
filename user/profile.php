@@ -1,5 +1,6 @@
 <?php
 include("login.php"); 
+include 'conn.php';
 // if($_SESSION['loggedin']==true){
 //     header("location:loginindex.html");
 // }
@@ -18,7 +19,7 @@ if($_SESSION['name']==''){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revive Eats</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home2.css">
     <link rel="stylesheet" href="profile.css">
     <!-- <link rel="stylesheet" href="loginstyle.css"> -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -37,12 +38,12 @@ body {
 /* Header Styles */
 header {
     border-bottom: 2px solid black;
-    /* padding: 10px 0; */
-    /* background-color: #fff; Change this to your desired background color */
+    padding: 10px 0;
+    background-color: #fff; /* Change this to your desired background color */
     position: fixed;
-    /* width: 100%; */
+    width: 100%;
     top: 0;
-    /* z-index: 999; */
+    z-index: 999;
 }
 
 /* .logo {
@@ -51,7 +52,6 @@ header {
     color: black;
 } */
 .logo {
-    margin-left: 40px;
     font-size: 28px;
     color: var(--navfont);
 }
@@ -104,65 +104,20 @@ header {
             <!-- Profile information section -->
             <p class="headingline">Profile</p>
             <div class="info">
-                <p><b>Name: </b><?php echo $_SESSION['name']; ?></p>
-                <p><b>Email: </b><?php echo $_SESSION['email']; ?></p>
-                <p><b>Gender: </b><?php echo $_SESSION['gender']; ?></p>
+                <p>Name: <?php echo $_SESSION['name']; ?></p>
+                <p>Email: <?php echo $_SESSION['email']; ?></p>
+                <p>Gender: <?php echo $_SESSION['gender']; ?></p>
                 <!-- Additional profile details can be added here -->
                 <a href="logout.php">Logout</a>
             </div>
+           
             
-            <!-- Orders section -->
-            <hr>
-            <p class="heading">Your Orders</p>
-            <div class="table-container">
-                <div class="table-wrapper">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                // PHP code to fetch and display user orders
-                                // Modify this part according to your database structure and logic
-                $connection = mysqli_connect('localhost','root',''); //connection with server apache (servername,username,pwd)
-
-                                $email = $_SESSION['email'];
-                                $query = "SELECT * FROM orders WHERE email='$email'";
-                                $result = mysqli_query($connection, $query);
-                                if($result) {
-                                    while($row = mysqli_fetch_assoc($result)) {
-                                        echo "<tr>";
-                                        echo "<td>".$row['order_id']."</td>";
-                                        echo "<td>".$row['product']."</td>";
-                                        echo "<td>".$row['quantity']."</td>";
-                                        echo "<td>".$row['total_price']."</td>";
-                                        echo "</tr>";
-                                    }
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-              <br>
-              <br>
-
-            
-            
-         <hr>
+        
          <br>
          <p class="heading">Your donations</p>
          <!-- <p class="" style="font-family: 'Times New Roman', Times, serif; font-size: 20px;">Your donations</p><br> -->
          <!-- <img src="profilecover1.jpg" alt="" width='100%' height='auto'> -->
-   <div class="table-container">
+        <div class="table-container">
          <!-- <p id="heading">donated</p> -->
          <div class="table-wrapper">
         <table class="table">
@@ -178,7 +133,6 @@ header {
         
 
          <?php
-    $connection = mysqli_connect('localhost','root',''); 
         $email=$_SESSION['email'];
         $query="select * from food_donations where email='$email'";
         $result=mysqli_query($connection, $query);
@@ -194,6 +148,8 @@ header {
     </table>
          </div>
    </div>          
+
+            
 
         </div>
     </div>

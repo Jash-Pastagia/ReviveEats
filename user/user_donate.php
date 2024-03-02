@@ -4,7 +4,6 @@ header("conn.php");
 if($_SESSION['name']==''){
 	header("location: user_signin.php");
 }
-// include("login.php"); 
 $emailid= $_SESSION['email'];
 // $db=mysqli_select_db($connection,'demo');
 if(isset($_POST['submit']))
