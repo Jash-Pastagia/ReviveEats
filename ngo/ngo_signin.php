@@ -20,12 +20,12 @@ if (isset($_POST['sign'])) {
         $_SESSION['name'] = $row['name'];
         $_SESSION['city'] = $row['city'];
 
-        header("location:home.php");
+        header("location:ngo_home.php");
       } else {
         $token = 1;
       }
     }
-  } else {}
+  } else {}}
     ?>
 
 <!DOCTYPE html>

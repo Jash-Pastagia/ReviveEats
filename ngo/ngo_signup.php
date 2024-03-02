@@ -116,7 +116,7 @@ if(isset($_POST['submit']))
                   <button type="submit" name="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" >Sign up</button>
                 </div>
                 <center>
-                <a href="ngo_signin.html" class="mt-10 text-sm text-center ">
+                <a href="ngo_signin.php" class="mt-10 text-sm text-center ">
                   Already have an account?
                 </a>
               </center>
