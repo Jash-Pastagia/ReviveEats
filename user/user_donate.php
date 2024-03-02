@@ -145,12 +145,7 @@ if(isset($_POST['submit']))
                         </select>
                     </div>
                     <div class="btn">
-<<<<<<< HEAD
                         <button type="submit" name="submit"> Submit</button>
-=======
-
-                        <button type="submit" name="submit">Submit</button>
->>>>>>> 8041ea6aabc7f8a55a8e78da3d92a2fe70d4b5fd
                     </div>
                 </form>
             </div>
