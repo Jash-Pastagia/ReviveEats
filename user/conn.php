@@ -1,7 +1,7 @@
 
 
 <?php
-    $connection = mysqli_connect('localhost','root',''); //connection with server apache (servername,username,pwd)
+    $connection = mysqli_connect('localhost:3304','root',''); //connection with server apache (servername,username,pwd)
     // if($connection) 
     // {   
     //     echo "connection done !! ";
