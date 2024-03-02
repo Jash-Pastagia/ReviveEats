@@ -9,7 +9,10 @@ body{
 
   
 
-
+.logo {
+    font-size: 28px;
+    color: var(--navfont);
+  }
 .cover{
  width: 100%;
     height: 500px;

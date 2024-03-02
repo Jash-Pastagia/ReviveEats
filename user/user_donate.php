@@ -145,8 +145,7 @@ if(isset($_POST['submit']))
                         </select>
                     </div>
                     <div class="btn">
-
-                        <button type="submit" name="submit">Submit</button>
+                        <button type="submit" name="submit"> Submit</button>
                     </div>
                 </form>
             </div>
