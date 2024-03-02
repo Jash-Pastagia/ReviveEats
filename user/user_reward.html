@@ -1,222 +1,133 @@
 <head>
     <style>
-        @import url("https://use.typekit.net/qno3ktb.css");
-
-* {
-  box-sizing: border-box;
+body {
+    /* justify-content: center;
+    align-items: center; */
+    /* background: #111; */
+    /* display: flex; */
+    height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-size: 1em;
-  font-family:'proxima-nova', serif;
-}
-
-.btn {
-  display: inline-flex;
-  background-color: black;
-  color: white;
-  padding: 10px 25px;
-  margin: auto;
-}
-
-#markTransitionDelayValue,
-#rewardsStatus {
-  padding: 5px;
-  background: pink;
-}
-
-.content {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-}
-
-.progress-bar-wrapper {
-  padding: 10px;
-  border-right: solid 1px #ccc;
-  border-left: solid 1px #ccc;
-  align-self: center;
-
-  .tier-wrapper {
-    display: flex;
-    justify-content: space-between;
+.chart {
+    background: rgba(255, 255, 255, 0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
     align-items: center;
-      
-    .bold {
-      font-weight: 700;
-    }
-
-    .tier {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding: 15px 0;
-      border-right: solid 1px #ccc;
-      text-align: center;
-      
-      &--start {
-        text-align: left;
-      }
-      
-      &:last-child {
-        text-align: right;
-        border: none;
-      }
-    }
-  }
-  
-  .progress-bar {
-    height: 9px;
-    width: 0;
-    background-color: black;
     position: relative;
-    transition-property: width;
-    transition-timing-function: ease;
+    padding: 0 5px;
+    display: flex;
+    height: 40px;
+    width: 500px;
+}
+    .chart span {
+        /* You can modify the value below to change the distance between the percentage number and the bar */
+        margin-left: 5px;
+        color: #bd860f;
+        font-weight: bolder;
+    }
 
-    &--base {
-      width: 370px;
-      background-color: #ccc;
+.bar {
+    /* You can modify the total time used for the animation here */
+    animation: load 3s normal forwards;
+    /* 
+    Add a little spice by having a shadow below the bar.
+    Feel free to comment out this line below to have an even LITE version :D 
+    */
+    box-shadow: 0 10px 40px -10px #fff;
+
+    border-radius: 100px;
+    background: #1c134d;
+    height: 30px;
+    width: 0;
+} 
+
+@keyframes load {
+    0% {
+        width: 0;
     }
-    
-    .mark {
-      display: flex;
-      width: 7px;
-      height: 0;
-      margin: auto;
-      position: absolute;
-      opacity: 0;
-      top: 50%;
-      left: calc(50% - 7px);
-      transform: translateY(-50%) translateX(50%);
-      transition-delay: 200ms;
-      transition-property: height;
-      transition-timing-function: cubic-bezier(1.000, -1, 0.000, 2);
-      transition-duration: 200ms;
-      
-      &--base {
-        background-color: #ccc;
-        height: 30px;
-        opacity: 1;
-      }
+    100% {
+        /* You need to change the percentage below to match the value in the corresponding <span> */
+        width: 68%;
     }
-  }
 }
 
+.chart {
+    background: rgba(255, 255, 255, 0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 40px;
+    width: 500px;
+}
+    .chart span {
+        /* You can modify the value below to change the distance between the percentage number and the bar */
+        margin-left: 5px;
+        color: #9a137d;
+        font-weight: bolder;
+    }
+
+.bar {
+    /* You can modify the total time used for the animation here */
+    animation: load 3s normal forwards;
+    /* 
+    Add a little spice by having a shadow below the bar.
+    Feel free to comment out this line below to have an even LITE version :D 
+    */
+    box-shadow: 0 10px 40px -10px #fff;
+
+    border-radius: 100px;
+    background: #7a2323;
+    height: 30px;
+    width: 0;
+} 
+
+@keyframes load {
+    0% {
+        width: 0;
+    }
+    100% {
+        /* You need to change the percentage below to match the value in the corresponding <span> */
+        width: 68%;
+    }
+}
 
 </style>
+
+<link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
+
 <body>
-<button id="play" class="btn">REPLAY</button>
-<span class="loyalty-account__overview__status__account-number" id="rewardsStatus" data-dollars-to-next-tier="230" data-rewards-tiername="2">Rewards # 1000051</span>
-<span id="markTransitionDelayValue">0</span>
-<div class="content">
-  <div class="progress-bar-wrapper">
-    <div class="tier-wrapper">
-      <span class="tier tier--start bold">Rewards</span>
-      <span class="tier tier--middle bold">Plus</span>
-      <span class="tier tier--end bold">VIP</span>
-    </div>
-    <div class="progress-bar progress-bar--base">
-      <div class="mark mark--base">
-        <div id="markProgress" class="mark"></div>
-      </div>
-      <div id="progressBar" class="progress-bar"></div>
-    </div>
-    <div class="tier-wrapper">
-      <span class="tier tier--start">$0</span>
-      <span class="tier tier--middle">$400</span>
-      <span class="tier tier--end">$1200</span>
-    </div>
-  </div>
+    <header>
+        <div class="logo">Revive<b style="color: #06C167;">Eats</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="../index.html" >Logout</a></li>
+                <li><a href="contact.html" >Contact</a></li>
+                <li><a href="profile.php" >Profile</a></li>
+                <!-- <li ><a href="fooddonate.html"  >Donate</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="chart">
+    <div class="bar"></div>
+    <!-- Change the value below -->
+    <span id="value1">68</span>
 </div>
+</body>
 
 <script>
 
-    // to replay animation during development
-const replayBtn = document.querySelector("#play");
-
-let rewardsProgress: number = 0;
-// elements to animate
-const progressBar = document.querySelector("#progressBar") as any;
-const mark = document.querySelector("#markProgress") as any;
-const dollarsToNextTier = Number(
-  (document.querySelector("#rewardsStatus") as Element).getAttribute("data-dollars-to-next-tier") ||
-    0
-);
-const tierName =
-  ((document.querySelector("#rewardsStatus") as Element).getAttribute(
-    "data-rewards-tiername"
-  ) as string)
-    .trim() || "";
-
-const rewardsTiers = {
-  base: {
-    label: "1",
-    threshold: 0
-  },
-  plus: {
-    label: "2",
-    threshold: 400
-  },
-  vip: {
-    label: "3",
-    threshold: 1200
-  }
-};
-
-function calculateRewardsStatus() {
-  if (tierName === "3") {
-    rewardsProgress = 100;
-  } else if (tierName === "2") {
-    rewardsProgress =
-      ((rewardsTiers.vip.threshold - dollarsToNextTier) / rewardsTiers.vip.threshold) * 100;
-  } else {
-    rewardsProgress =
-      ((rewardsTiers.plus.threshold - dollarsToNextTier) / rewardsTiers.vip.threshold) * 100;
-  }
-
-  return (rewardsProgress = Number(rewardsProgress.toFixed()));
-}
-
-const addStyles = percentComplete => {
-  const velocity = 1;
-  progressBar.style.transitionDuration = velocity * (percentComplete / 100) + "s";
-  progressBar.style.width = percentComplete + "%";
-  progressBar.style.opacity = 1;
-  //
-  
-  if (percentComplete > 49) {
-    mark.style.transitionDelay = (velocity * (percentComplete / 100)) / 2 + "s";
-    mark.style.height = '30px';
-    mark.style.opacity = 1;
-    mark.style.backgroundColor = 'black';
-    
-  }
-  // for debugging
-  document.querySelector("#markTransitionDelayValue").innerText = velocity * (percentComplete / 100) + "s";
-
-};
-
-const removeStyles = () => {
-  progressBar.style.transitionDuration = '0s';
-  progressBar.style.width = '0%';
-  progressBar.style.opacity = 0;
-  mark.style.transitionDelay = '0s';
-  mark.style.height = '0px';
-  mark.style.opacity = 0;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  window.setTimeout(() => {
-    addStyles(calculateRewardsStatus());
-  }, 1500);
-});
-
-// for debugging
-replayBtn.addEventListener('click', (e) => {
-  removeStyles();
-  window.setTimeout(e => {addStyles(calculateRewardsStatus())}, 500);
-});
 </script>
