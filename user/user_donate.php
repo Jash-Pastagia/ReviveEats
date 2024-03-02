@@ -1,9 +1,12 @@
 <?php
 include("login.php"); 
+
 // header("conn.php");
 $connection = mysqli_connect('localhost', 'root', '');
 $db = mysqli_select_db($connection, 'hackathon');
 
+$connection = mysqli_connect('localhost','root','');
+$database = mysqli_select_db($connection,'hackathon');
 if($_SESSION['name']==''){
 	header("location: user_signin.php");
 }
@@ -11,6 +14,7 @@ $emailid= $_SESSION['email'];
 // $db=mysqli_select_db($connection,'demo');    
 if(isset($_POST['submit']))
 {
+
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
     $meal=mysqli_real_escape_string($connection, $_POST['meal']);
     $category=$_POST['image-choice'];
