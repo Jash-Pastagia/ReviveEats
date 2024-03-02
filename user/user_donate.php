@@ -2,11 +2,9 @@
 include("login.php"); 
 
 // header("conn.php");
-$connection = mysqli_connect('localhost', 'root', '');
+$connection = mysqli_connect('localhost:3304', 'root', '');
 $db = mysqli_select_db($connection, 'hackathon');
 
-$connection = mysqli_connect('localhost','root','');
-$database = mysqli_select_db($connection,'hackathon');
 if($_SESSION['name']==''){
 	header("location: user_signin.php");
 }
@@ -24,8 +22,17 @@ if(isset($_POST['submit']))
     $district=mysqli_real_escape_string($connection, $_POST['district']);
     $address=mysqli_real_escape_string($connection, $_POST['address']);
     $name=mysqli_real_escape_string($connection, $_POST['name']);
-  
-    $query="insert into food_donations(email,food,type,category,phoneno,location,address,name,quantity) values('$emailid','$foodname','$meal','$category','$phoneno','$district','$address','$name','$quantity')";
+    
+    if($quantity >= 1 && $quantity <= 5){
+        $credit = 80;
+    }
+    else if($quantity >= 20 && $quantity <= 99){
+        $credit = 400;
+    }
+    else if($quantity >= 100){
+        $credit = 2000;
+    }
+    $query="insert into food_donations(email,food,type,category,phoneno,location,address,name,quantity, credit) values('$emailid','$foodname','$meal','$category','$phoneno','$district','$address','$name','$quantity','$credit')";
     $query_run= mysqli_query($connection, $query);
     if($query_run)
     {
@@ -46,6 +53,7 @@ if(isset($_POST['submit']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revive Eats</title>
+    <link rel="icon" type="image/x-icon" href="./logo.png">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="loginstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
