@@ -64,8 +64,6 @@ if (isset($_POST['sign'])) {
 </head>
 
 <body class="sign-in-basic">
-  <!-- Navbar Transparent -->
-  <!-- End Navbar -->
   <div class="page-header align-items-start min-vh-100" loading="lazy">
     <span class="mask bg-gradient-dark opacity-6"></span>
     <div class="container my-auto">
@@ -98,12 +96,6 @@ if (isset($_POST['sign'])) {
                         echo '<p class="error" style="color:red">Password not match.</p>';
                     }
                   ?>
-                <!-- <a href="user_signup.html" class="mt-10 text-sm text-center">
-                    Forgot Password?
-                  </a><br>
-                  <a href="user_signup.html" class="mt-10 text-m text-center ">
-                    Don't have an account?
-                  </a> -->
                 </center>
               </form>
             </div>

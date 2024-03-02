@@ -117,7 +117,6 @@ if(isset($_POST['submit']))
                         <p style="text-align: center;">Contact Details</p>
                     </b>
                     <div class="input">
-
                         <div>
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" value="<?php echo"". $_SESSION['name'] ;?>"
@@ -136,12 +135,12 @@ if(isset($_POST['submit']))
                         <label for="location"></label>
                         <label for="district">District:</label>
                         <select id="district" name="district" style="height: 2rem; width: 5rem; font-size: 1rem">
-                        <option value="chennai" selected>Surat</option>
-                            <option value="kancheepuram">Ahmedabad</option>
-                            <option value="thiruvallur">Baroda</option>
-                            <option value="vellore">Nadiad</option>
-                            <option value="tiruvannamalai">Gandhinagar</option>
-                            <option value="tiruvallur">Valsad</option>
+                        <option value="Surat" selected>Surat</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Baroda">Baroda</option>
+                            <option value="Nadiad">Nadiad</option>
+                            <option value="Gandhinagar">Gandhinagar</option>
+                            <option value="Valsad">Valsad</option>
                         </select>
                     </div>
                     <div class="btn">
