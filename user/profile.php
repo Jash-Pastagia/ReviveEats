@@ -19,7 +19,7 @@ if($_SESSION['name']==''){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revive Eats</title>
-    <link rel="stylesheet" href="home2.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="profile.css">
     <!-- <link rel="stylesheet" href="loginstyle.css"> -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -38,12 +38,12 @@ body {
 /* Header Styles */
 header {
     border-bottom: 2px solid black;
-    padding: 10px 0;
-    background-color: #fff; /* Change this to your desired background color */
+    /* padding: 10px 0; */
+    /* background-color: #fff; Change this to your desired background color */
     position: fixed;
-    width: 100%;
+    /* width: 100%; */
     top: 0;
-    z-index: 999;
+    /* z-index: 999; */
 }
 
 /* .logo {
@@ -52,6 +52,7 @@ header {
     color: black;
 } */
 .logo {
+    margin-left: 40px;
     font-size: 28px;
     color: var(--navfont);
 }
@@ -104,9 +105,9 @@ header {
             <!-- Profile information section -->
             <p class="headingline">Profile</p>
             <div class="info">
-                <p>Name: <?php echo $_SESSION['name']; ?></p>
-                <p>Email: <?php echo $_SESSION['email']; ?></p>
-                <p>Gender: <?php echo $_SESSION['gender']; ?></p>
+                <p><b>Name: </b><?php echo $_SESSION['name']; ?></p>
+                <p><b>Email: </b><?php echo $_SESSION['email']; ?></p>
+                <p><b>Gender: </b><?php echo $_SESSION['gender']; ?></p>
                 <!-- Additional profile details can be added here -->
                 <a href="logout.php">Logout</a>
             </div>
