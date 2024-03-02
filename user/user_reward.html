@@ -44,14 +44,21 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#" >Reward</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#user_reward" class="active">Reward</a></li>
                 <li><a href="contact.html" >Contact</a></li>
                 <li><a href="profile.php" >Profile</a></li>
                 <!-- <li ><a href="fooddonate.html"  >Donate</a></li> -->
             </ul>
         </nav>
     </header>
+    <script>
+        hamburger=document.querySelector(".hamburger");
+        hamburger.onclick =function(){
+            navBar=document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
     <div class="container">
         <div class="row py-3 mt-4">
           <div class="col-8 mx-auto">
