@@ -30,7 +30,7 @@ if($_SESSION['name']==''){
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="admin.php">
+                <li><a href="home.php">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
