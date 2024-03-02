@@ -145,12 +145,7 @@ if(isset($_POST['submit']))
                         </select>
                     </div>
                     <div class="btn">
-<<<<<<< HEAD:user/user_donate.html
                         <button type="submit" name="submit"> Submit</button>
-=======
-                        <button type="submit" name="submit">Submit</button>
->>>>>>> 81c7c7ca05623b340c55c7208d9d4543d8740ec8:user/user_donate.php
-
                     </div>
                 </form>
             </div>
