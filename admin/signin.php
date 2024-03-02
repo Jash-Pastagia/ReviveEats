@@ -1,6 +1,8 @@
 <?php
 session_start();
 include '../connection.php';
+$token=0;
+
 if (isset($_POST['sign'])) {
   $email =$_POST['email'];
   $password =$_POST['password'];
@@ -16,9 +18,9 @@ if (isset($_POST['sign'])) {
       if (password_verify($password, $row['password'])) {
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $row['name'];
-        $_SESSION['gender'] = $row['gender'];
+        // $_SESSION['gender'] = $row['gender'];
         
-        header("location:../user/home.html");
+        header("location:home.php");
       } else {
         $token = 1;
       }
@@ -27,7 +29,7 @@ if (isset($_POST['sign'])) {
     ?>
     <script>
       alert('Account does not exist!');
-      location.href="user_signup.php";
+      location.href="signin.php";
     </script>
     <?php
   }
@@ -37,7 +39,7 @@ if (isset($_POST['sign'])) {
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -86,9 +88,15 @@ if (isset($_POST['sign'])) {
                   <input type="password" name="password" class="form-control">
                 </div>
                 <div class="text-center">
-                  <button type="submit" name="sign" class="btn bg-gradient-dark w-100 my-4 mb-2" onclick="admin()">Sign In</button>
+                  <button type="submit" name="sign" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign In</button>
                 </div>
                 <center>
+                <?php
+                    if($token==1){
+                        echo ' <i class="bx bx-error-circle error-icon"></i>';
+                        echo '<p class="error" style="color:red">Password not match.</p>';
+                    }
+                  ?>
                 <!-- <a href="user_signup.html" class="mt-10 text-sm text-center">
                     Forgot Password?
                   </a><br>
@@ -126,9 +134,7 @@ if (isset($_POST['sign'])) {
   <script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
 
   <script>
-    function admin(){
-        location.href = "admin.php"
-    }
+   
   </script>
 </body>
 

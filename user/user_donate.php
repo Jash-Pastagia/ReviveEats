@@ -1,3 +1,38 @@
+<?php
+include("login.php"); 
+if($_SESSION['name']==''){
+	header("location: user_signin.php");
+}
+// include("login.php"); 
+$emailid= $_SESSION['email'];
+$connection=mysqli_connect("localhost:3304","root","");
+$db=mysqli_select_db($connection,'demo');
+if(isset($_POST['submit']))
+{
+    $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
+    $meal=mysqli_real_escape_string($connection, $_POST['meal']);
+    $category=$_POST['image-choice'];
+    $quantity=mysqli_real_escape_string($connection, $_POST['quantity']);
+    // $email=$_POST['email'];
+    $phoneno=mysqli_real_escape_string($connection, $_POST['phoneno']);
+    $district=mysqli_real_escape_string($connection, $_POST['district']);
+    $address=mysqli_real_escape_string($connection, $_POST['address']);
+    $name=mysqli_real_escape_string($connection, $_POST['name']);
+  
+    $query="insert into food_donations(email,food,type,category,phoneno,location,address,name,quantity) values('$emailid','$foodname','$meal','$category','$phoneno','$district','$address','$name','$quantity')";
+    $query_run= mysqli_query($connection, $query);
+    if($query_run)
+    {
+
+        echo '<script type="text/javascript">alert("data saved")</script>';
+        header("location:delivery.html");
+    }
+    else{
+        echo '<script type="text/javascript">alert("data not saved")</script>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +56,7 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="home" class="active">Home</a></li>
+                <li><a href="home.html" class="active">Home</a></li>
                 <li><a href="user_reward.html">Reward</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="profile.php">Profile</a></li>
@@ -100,8 +135,8 @@
                         <input type="text" id="address" name="address" required /><br>
                         <label for="location"></label>
                         <label for="district">District:</label>
-                        <select id="district" name="district">
-                            <option value="chennai" selected>Surat</option>
+                        <select id="district" name="district" style="height: 2rem; width: 5rem; font-size: 1rem">
+                        <option value="chennai" selected>Surat</option>
                             <option value="kancheepuram">Ahmedabad</option>
                             <option value="thiruvallur">Baroda</option>
                             <option value="vellore">Nadiad</option>
@@ -110,7 +145,11 @@
                         </select>
                     </div>
                     <div class="btn">
+<<<<<<< HEAD:user/user_donate.html
                         <button type="submit" name="submit"> Submit</button>
+=======
+                        <button type="submit" name="submit">Submit</button>
+>>>>>>> 81c7c7ca05623b340c55c7208d9d4543d8740ec8:user/user_donate.php
 
                     </div>
                 </form>
