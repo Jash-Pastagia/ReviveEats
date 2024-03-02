@@ -101,8 +101,8 @@ if (isset($_POST['sign'])) {
                   </a>
                   <?php
                     if($msg==1){
-                        echo ' <i class="bx bx-error-circle error-icon" style="color: red"></i>';
-                        echo '<p class="error">Password not match.</p>';
+                        echo ' <i class="bx bx-error-circle error-icon" style=""></i>';
+                        echo '<p class="error" style="color: red">Password not match.</p>';
                     }
                     ?>
                 </center>
