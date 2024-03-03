@@ -1,4 +1,4 @@
 <?php 
-$connection = mysqli_connect('localhost:3304', 'root', '');
+$connection = mysqli_connect('localhost:3306', 'root', '');
 $db = mysqli_select_db($connection, 'hackathon');
 ?>

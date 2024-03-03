@@ -153,55 +153,56 @@ header {
 
         </div>
     </div>
+        </div>
 
-    <footer class="footer" id="contact">
-            <div class="footer-left col-md-4 col-sm-6">
-                <p class="about">
-                    <span> About us</span>The basic concept of this project Food Waste Management is to collect the
-                    excess/leftover
-                    food from donors such as hotels, restaurants, marriage halls , etc and distribute to the needy
-                    people .
-                </p>
+    
+
+    <footer class="footer">
+        <div class="footer-left col-md-4 col-sm-6">
+            <p class="about">
+                <span> About us</span>The basic concept of this project Food Waste Management is to collect the
+                excess/leftover
+                food from donors such as hotels, restaurants, marriage halls , etc and distribute to the needy people .
+            </p>
+
+        </div>
+        <div class="footer-center col-md-4 col-sm-6">
+            <div>
+                <p><span> Contact</span> </p>
 
             </div>
-            <div class="footer-center col-md-4 col-sm-6">
-                <div>
-                    <p><span> Contact</span> </p>
+            <div>
 
-                </div>
-                <div>
+                <p> +91 9825111616</p>
 
-                    <p> +91 9825111616</p>
-
-                </div>
-                <div>
-                    <!-- <i class="fa fa-envelope" style="font-size: 17px;
+            </div>
+            <div>
+                <!-- <i class="fa fa-envelope" style="font-size: 17px;
             line-height: 38px; color:white;"></i> -->
-                    <p><a href="#">Reviveeats@gmail.com</a></p>
-                </div>
-
-                <div class="sociallist">
-                    <ul class="social">
-                        <li><a href="https://www.facebook.com/TheAkshayaPatraFoundation/"><img
-                                    src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
-                        <li><a href="https://twitter.com/globalgiving"><img
-                                    src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a>
-                        </li>
-                        <li><a href="https://www.instagram.com/charitism/"><img
-                                    src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
-                        <li><a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp"
-                                    style="font-size:50px;color: black;"></i></a></li>
-                    </ul>
-                </div>
+                <p><a href="#">Reviveeats@gmail.com</a></p>
             </div>
-            <div class="footer-right col-md-4 col-sm-6">
-                <h2>Revive<span>Eats</span></h2>
 
-                <p class="name">All rights reserved. Copyright ©
-                    <script>document.write(new Date().getFullYear())</script> Code Fusion Five
-                </p>
+            <div class="sociallist">
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/TheAkshayaPatraFoundation/"><img
+                                src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+                    <li><a href="https://twitter.com/globalgiving"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/charitism/"><img
+                                src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+                    <li><a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp"
+                                style="font-size:50px;color: black;"></i></a></li>
+                </ul>
             </div>
-        </footer>
+        </div>
+        <div class="footer-right col-md-4 col-sm-6">
+            <h2>Revive<span>Eats</span></h2>
+
+            <p class="name">All rights reserved. Copyright ©
+                <script>document.write(new Date().getFullYear())</script> Code Fusion Five
+            </p>
+        </div>
+    </footer>
     <script>
         hamburger = document.querySelector(".hamburger");
         hamburger.onclick = function () {
