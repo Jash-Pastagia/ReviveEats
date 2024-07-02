@@ -2,9 +2,8 @@
 <?php
 // $connection = mysqli_connect("localhost:3307", "root", "");
 // $db = mysqli_select_db($connection, 'demo');
-session_start();
 include '../connection.php';
-
+ include("connect.php"); 
 if($_SESSION['name']==''){
 	header("location:signin.php");
 }
@@ -24,9 +23,12 @@ if($_SESSION['name']==''){
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Admin Dashboard Panel</title> 
+    <title>ReviveEats</title> 
     
 <?php
+ $connection=mysqli_connect("localhost:3304","root","");
+ $db=mysqli_select_db($connection,'demo');
+ 
 
 
 ?>
@@ -38,28 +40,25 @@ if($_SESSION['name']==''){
                 <!--<img src="images/logo.png" alt="">-->
             </div>
 
-            <span class="logo_name">ADMIN</span>
+            <span class="logo_name">NGO</span>
         </div>
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="home.php">
+                <li><a href="admin.php">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name">Dahsboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a></li>
                 <!-- <li><a href="#">
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Content</span>
                 </a></li> -->
-                <li><a href="analytics.php">
-                    <i class="uil uil-chart"></i>
-                    <span class="link-name">Analytics</span>
-                </a></li>
+                
                 <li><a href="donate.php">
                     <i class="uil uil-heart"></i>
                     <span class="link-name">Donates</span>
                 </a></li>
-                <li><a href="feedback.php">
+                <li><a href="#">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Feedbacks</span>
                 </a></li>

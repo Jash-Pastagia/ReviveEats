@@ -3,8 +3,9 @@ include("login.php");
 
 // header("conn.php");
 $connection = mysqli_connect('localhost:3304', 'root', '');
-$db = mysqli_select_db($connection, 'hackathon');
+$db = mysqli_select_db($connection, 'demo');
 
+$credit = 0;
 if($_SESSION['name']==''){
 	header("location: user_signin.php");
 }
@@ -12,7 +13,6 @@ $emailid= $_SESSION['email'];
 // $db=mysqli_select_db($connection,'demo');    
 if(isset($_POST['submit']))
 {
-
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
     $meal=mysqli_real_escape_string($connection, $_POST['meal']);
     $category=$_POST['image-choice'];
@@ -52,7 +52,7 @@ if(isset($_POST['submit']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revive Eats</title>
+    <title>ReviveEats</title>
     <link rel="icon" type="image/x-icon" href="./logo.png">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="loginstyle.css">

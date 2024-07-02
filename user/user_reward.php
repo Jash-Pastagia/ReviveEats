@@ -26,7 +26,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revive Eats</title>
+    <title>ReviveEats</title>
     <link rel="icon" type="image/x-icon" href="../logo.png">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="loginstyle.css">
@@ -339,6 +339,7 @@
         <?php
             if($_POST['withdraw']){
                 $amt = $_POST['amount'];
+                if($amt>0){
                 if($amt > $credit){
                     ?>
                     <script>
@@ -365,6 +366,17 @@
                     <?php
                 }
             }
+            else{
+                ?>
+                <script>
+                    var x = document.getElementById("toast");
+                    x.className = "show";
+                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+                </script>
+                <?php
+            }
+        }
+        
         ?>
        
       

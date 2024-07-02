@@ -1,10 +1,9 @@
 
 <?php
-session_start();
-
 // $connection = mysqli_connect("localhost:3307", "root", "");
 // $db = mysqli_select_db($connection, 'demo');
-include("../connection.php");
+include "../connection.php";
+include("connect.php"); 
 if($_SESSION['name']==''){
 	header("location:signin.php");
 }
@@ -24,9 +23,12 @@ if($_SESSION['name']==''){
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Admin Dashboard Panel</title> 
+    <title>ReviveEats</title> 
     
 <?php
+ $connection=mysqli_connect("localhost:3304","root","");
+ $db=mysqli_select_db($connection,'demo');
+
 
 ?>
 </head>
@@ -37,23 +39,16 @@ if($_SESSION['name']==''){
                 <!--<img src="images/logo.png" alt="">-->
             </div>
 
-            <span class="logo_name">ADMIN</span>
+            <span class="logo_name">NGO</span>
         </div>
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="home.php">
+                <li><a href="admin.php">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-                <!-- <li><a href="#">
-                    <i class="uil uil-files-landscapes"></i>
-                    <span class="link-name">Content</span>
-                </a></li> -->
-                <li><a href="analytics.php">
-                    <i class="uil uil-chart"></i>
-                    <span class="link-name">Analytics</span>
-                </a></li>
+                
                 <li><a href="#">
                     <i class="uil uil-heart"></i>
                     <span class="link-name">Donates</span>
@@ -97,7 +92,7 @@ if($_SESSION['name']==''){
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
             <!-- <p>Food Donate</p> -->
-            <p  class ="logo" >Revive <b style="color: #06C167; ">Eats</b></p>
+            <p  class ="logo" >Revive<b style="color: #06C167; ">Eats</b></p>
              <p class="user"></p>
             <!-- <div class="search-box">
                 <i class="uil uil-search"></i>
@@ -116,27 +111,13 @@ if($_SESSION['name']==''){
                
             <div class="location">
                 <!-- <p class="logo">Filter by Location</p> -->
-          <form method="post">
-             <label for="location" class="logo">Select Location:</label>
-             <!-- <br> -->
-            <select id="location" name="location">
-            <option value="" id="">-choose-</option>
-            <option value="Surat" id="Surat">Surat</option>
-            <option value="Ahmedabad" id="Ahmedabad">Ahmedabad</option>
-            <option value="Baroda" id="Baroda">Baroda</option>
-            <option value="Nadiad" id="Nadiad">Nadiad</option>
-            <option value="Gandhinagar" id="Gandhinagar">Gandhinagar</option>
-            <option value="Valsad" id="Valsad">Valsad</option>
-            </select>
-                <input type="submit" value="Get Details">
-         </form>
-         <br>
+          
 
          <?php
     // Get the selected location from the form
-    if(isset($_POST['location'])) {
-      $location = $_POST['location'];
-   
+    
+      $location = $_SESSION['location'];
+      
       // Query the database for people in the selected location
       $sql = "SELECT * FROM food_donations WHERE location='$location'";
       $result=mysqli_query($connection, $sql);
@@ -172,8 +153,6 @@ if($_SESSION['name']==''){
         echo "<p>No results found.</p>";
       }
       
-   
-    }
   ?>
  </div>
 

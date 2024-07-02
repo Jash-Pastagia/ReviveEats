@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Current Location on Map</title>
+    <title>ReviveEats</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
     crossorigin=""/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <link rel="stylesheet" href="./ngo_home.css">
+    <link rel="stylesheet" href="../home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
     <!-- <link rel="stylesheet" href="delivery.css"> -->
     <style>
@@ -43,7 +43,7 @@
   </head>
   <body>
   <header>
-        <div class="logo">Revive <b style="color: #06C167;">Eats</b></div>
+        <div class="logo">Food <b style="color: #06C167;">Donate</b></div>
         <div class="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -51,7 +51,7 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="ngo_home.php">Home</a></li>
+                <li><a href="delivery.php">Home</a></li>
                 <li><a href="#" class="active">map</a></li>
                 <li><a href="deliverymyord.php" >myorders</a></li>
                 <!-- <li ><a href="fooddonate.html"  >Donate</a></li> -->

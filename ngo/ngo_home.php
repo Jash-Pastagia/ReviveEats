@@ -19,7 +19,7 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="ngo_home.html" class="active">Home</a></li>
+                <li><a href="ngo_home.php" class="active">Home</a></li>
                 <li><a href="ngo_map.html" >Map</a></li>
                 <li><a href="#" >My orderes</a></li>
                 <!-- <li ><a href="fooddonate.html"  >Donate</a></li> -->
